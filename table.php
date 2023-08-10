@@ -26,6 +26,29 @@
                 <?php } ?>
             </tbody>
         </table>
+
+        <h1>Listagem por agrupamento</h1>
+        <table width="100%">
+            <thead>
+                <th>Nome do banco</th>
+                <th>verba</th>
+                <th>contrato mais antigo</th>
+                <th>contrato mais novo</th>
+                <th>soma dos contratos</th>
+            </thead>
+            <tbody>
+                <?php while ($row = $group_result->fetch(PDO::FETCH_ASSOC)){ ?>
+                    <tr class="row">
+                        <td><?=$row['banco']?></td>
+                        <td><?=$row['verba']?></td>
+                        <td><?=$row['contrato_mais_antigo']?></td>
+                        <td><?=$row['contrato_mais_novo']?></td>
+                        <td><?=$row['soma_valor_contratos']?></td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+
         <style>
             thead{
                 background-color: #0000ff;
